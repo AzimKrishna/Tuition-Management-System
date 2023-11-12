@@ -1,0 +1,930 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+:root{
+    --blue: #161D6F;
+    --white: #fff;
+    --btn-hover-blue: #30399e;
+    --green: #98DED9;
+    --l-green: #C7FFD8;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+.home{
+    height: 100vh;
+}
+.home .wrapper{
+    display: flex;
+    position: relative;
+    height: 100%;
+}
+.home .wrapper .menu{
+    width: 250px;
+    height: 100%;
+    padding: 30px 0px;
+    position: fixed;
+    background-color: #161D6F;
+}
+.home .wrapper .menu h2{
+    color: #fff;
+    padding-left: 25px;
+    font-size: 24px;
+}
+.home .wrapper .menu ul li ul{
+    transition: all 0.5s ease;
+    list-style: none;
+    position: absolute;
+    padding-left: 0px;
+    display: none;
+    left: 250px;
+    top: 0;
+}
+.home .wrapper .menu ul .sch-menu{
+    position: relative;
+}
+.home .wrapper .menu ul .sch-menu:hover > ul{
+    display: initial;
+}
+.home .wrapper .menu ul .sub-sch{
+    width: 150px;
+    background-color: #161D6F;
+    transition: all 0.5s ease;
+    box-shadow: rgba(0, 0, 0, 0.14) 5px 5px 10px;
+    border-top-right-radius: 12px;
+    border-bottom-right-radius: 12px;
+}
+.home .wrapper .menu ul .sub-sch li{
+    padding-left: 0px;
+}
+.home .wrapper .menu ul li ul li a{
+    margin-left: 10px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    display: block;
+}
+.home .wrapper .menu ul li ul li{
+    padding-left: 0px;
+}
+.home .wrapper .menu .menu-adjust{
+    padding-top: 20px;
+} 
+.home .wrapper .menu ul li{
+    padding: 15px;
+    list-style: none;
+    border-bottom: 1px solid #bdb8d7;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+    border-top: 1px solid rgba(255,255,255,0.05);
+}
+.home .wrapper .menu ul li a{
+    margin-left: 10px;
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    display: block;
+}
+.home .wrapper .menu ul li:hover{
+    background-color: #30399e;
+    transition: all 0.5s ease;
+    
+}
+#active{
+    background-color: #30399e;
+    font-size: 20px;
+}
+.home .wrapper .menu ul .active, .home .wrapper .menu ul .active a{
+    background-color: #30399e;
+    font-size: 20px;
+}
+.home .wrapper .menu ul li:hover a{
+    font-size: 20px;
+}
+.home .wrapper .main-content{
+    background: #ffffff;
+    height: 100%;
+    width: 100%;
+    padding-left: 250px;
+}
+.home .wrapper .main-content .header{
+    background-color: #F6F6F6;
+    border-bottom: 1px solid #bdb8d7;
+    height: 85px;
+    text-align: center;
+    font-size: 24px;
+    padding: 20px;
+}
+.home .wrapper .main-content .content-card{
+    background-color: #F6F6F6;
+    box-shadow: rgba(0, 0, 0, 0.14) 0px 0px 10px;
+    margin: 35px;
+    border-radius: 10px;
+    padding: 20px;
+    height: 85vh;
+    overflow: auto;
+}
+.home .wrapper .main-content .content-card .student-table{
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+}
+.home .wrapper .main-content .content-card .student-table table{
+    width: 70%; 
+    border-collapse: collapse;
+    border-spacing: 0;
+    box-shadow: 0 5px 10px rgb(0 0 0 / 10%);
+    border-radius: 12px;
+    overflow: hidden;
+}
+.home .wrapper .main-content .content-card .student-table table th{
+    background-color: #98DED9;
+    color: #010701;
+    font-weight: bold;
+}
+.home .wrapper .main-content .content-card .student-table .add-student{
+    margin-left: 15px;
+    width: 30%;
+    /* background-color: red; */
+    
+}
+.home .wrapper .main-content .content-card .student-table table th, .home .wrapper .main-content .content-card .student-table table td{
+    text-align: left;
+    padding: 15px 20px;
+}
+
+.home .wrapper .main-content .content-card .student-table .add-student .add-student-form .title{
+    background-color: #C7FFD8;
+    padding: 15px 20px;
+    width: 100%;
+    border-top-right-radius: 12px;
+    border-top-left-radius: 12px;
+}
+.home .wrapper .main-content .content-card .student-table .add-student .add-student-form{
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 5px 10px rgb(0 0 0 / 10%);
+
+}
+.home .wrapper .main-content .content-card .student-table .add-student .add-student-form .container{
+    padding: 15px 20px;
+}
+.home .wrapper .main-content .content-card .student-table .add-student .add-student-form .container form input[type=text], .add-student-form .container form input[type=tel], .add-student-form .container form input[type=number], .add-student-form .container form input[type=email] {
+    background-color: #fff;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    height: 40px;
+    width: 100%;
+    font-size: 18px;
+    padding-left: 16px;
+    padding-right: 16px;
+}
+.add-student-form .container form select, .add-student-form .container form input[type=date]{
+    background-color: #fff;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    height: 40px;
+    width: 100%;
+    font-size: 16px;
+    padding-left: 12px;
+    padding-right: 12px;
+}
+.add-student-form .container form .btn-holder{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 35px;
+    margin-bottom: 20px;
+}
+.add-student-form .container form .btn-holder button{
+    border: none;
+    border-radius: 8px;
+    letter-spacing: 1px;
+    color: #fff;
+    padding: 8px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+#bt-res{
+    background-color: #b13935;
+}
+#bt-res:hover{
+    background-color: #ce4a45;
+}
+#bt-finish{
+    background-color: #7e5600;
+}
+#bt-finish:hover{
+    background-color: #906300;
+}
+#bt-sub{
+    background-color: #008332;
+}
+#bt-sub:hover{
+    background-color: #109744;
+
+}
+#bt-sub2{
+    background-color: #008332;
+}
+#bt-sub2:hover{
+    background-color: #109744;
+
+}
+#bt-view{
+    background-color: #2e66ff;
+}
+#bt-view:hover{
+    background-color: #4f7eff;
+}
+.home .wrapper .main-content .content-card .student-table table tr:nth-child(even){
+    background-color: #eeeeee;
+}
+.home .wrapper .main-content .content-card .student-table table tbody td button{
+    background-color: #2e66ff;
+    border: none;
+    border-radius: 8px;
+    letter-spacing: 1px;
+    color: #fff;
+    padding: 8px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+.home .wrapper .main-content .content-card .student-table table tbody td button:hover{
+    background-color: #4f7eff;
+    font-size: 15px;
+}
+.add-student-form .container form textarea{
+    background-color: #fff;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    height: 140px;
+    width: 100%;
+    font-size: 18px;
+    padding-left: 16px;
+    padding-right: 16px;
+}
+.home .wrapper .main-content .content-card .profile-card{
+    width: 70vh;
+    border-radius: 12px;
+    background-color: #F6F6F6;
+    box-shadow: rgba(0, 0, 0, 0.14) 0px 0px 10px;
+    transition: all 0.5s ease;
+}
+.home .wrapper .main-content .content-card .profile-card .profile-title{
+    background-color: #98DED9;
+    padding: 15px 20px;
+    width: 100%;
+    border-top-right-radius: 12px;
+    border-top-left-radius: 12px;
+}
+.home .wrapper .main-content .content-card .profile-card .profile-details{
+    padding: 15px 20px;
+}
+.home .wrapper .main-content .content-card .profile-card .profile-details form label{
+    font-size: 18px;
+}
+.home .wrapper .main-content .content-card .profile-card .profile-details form input[type=email], .profile-card .profile-details form input[type=text], .profile-card .profile-details form input[type=tel] , .profile-card .profile-details form input[type=number]{
+    background-color: #fff;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    height: 40px;
+    width: 100%;
+    font-size: 18px;
+    padding-left: 16px;
+    padding-right: 16px;
+}
+.profile-card .profile-details form select, .profile-card .profile-details form input[type=date]{
+    background-color: #fff;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    height: 40px;
+    width: 100%;
+    font-size: 16px;
+    padding-left: 12px;
+    padding-right: 12px;
+}
+.profile-card .profile-details form textarea{
+    background-color: #fff;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    height: 140px;
+    width: 100%;
+    font-size: 18px;
+    padding-left: 16px;
+    padding-right: 16px;
+}
+.profile-card .profile-details form .btn-holder{
+    display: flex;
+    justify-content: space-between;
+}
+.profile-card .profile-details form .btn-holder button{
+    border: none;
+    border-radius: 8px;
+    letter-spacing: 1px;
+    color: #fff;
+    padding: 8px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+.home .wrapper .main-content .content-card .btn-holder{
+    margin-bottom: 30px;
+}
+.home .wrapper .main-content .content-card .btn-holder button{
+    border: none;
+    border-radius: 8px;
+    letter-spacing: 1px;
+    padding: 8px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 18px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+#bt-back{
+    background-color: #F6F6F6;
+    font-weight: bold;
+    color: #000;
+}
+#bt-back:hover{
+    background-color: #161D6F;
+    color: #fff;
+}
+.home .wrapper .main-content .content-card .daily-sched-table{
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+}
+.home .wrapper .main-content .content-card .daily-sched-table table{
+    width: 70%; 
+    border-collapse: collapse;
+    border-spacing: 0;
+    box-shadow: 0 5px 10px rgb(0 0 0 / 10%);
+    border-radius: 12px;
+    overflow: hidden;
+}
+.home .wrapper .main-content .content-card .daily-sched-table table th{
+    background-color: #98DED9;
+    color: #010701;
+    font-weight: bold;
+}
+.home .wrapper .main-content .content-card .daily-sched-table table th, .home .wrapper .main-content .content-card .daily-sched-table table td{
+    text-align: left;
+    padding: 15px 20px;
+}
+.home .wrapper .main-content .content-card .daily-sched-table .daily-add-table{
+    width: 30%;
+    margin-left: 15px;
+}
+.home .wrapper .main-content .content-card .daily-sched-table .add-sched-form{
+    
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 5px 10px rgb(0 0 0 / 10%);
+}
+.home .wrapper .main-content .content-card .daily-sched-table .add-sched-form .title{
+    background-color: #C7FFD8;
+    padding: 15px 20px;
+    width: 100%;
+    border-top-right-radius: 12px;
+    border-top-left-radius: 12px;
+}
+.home .wrapper .main-content .content-card .daily-sched-table .add-sched-form .adder{
+    padding: 15px 20px;
+}
+.home .wrapper .main-content .content-card .daily-sched-table .add-sched-form .adder form select{
+    background-color: #fff;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    height: 40px;
+    width: 100%;
+    font-size: 18px;
+    padding-left: 16px;
+    padding-right: 16px;
+}
+.home .wrapper .main-content .content-card .daily-sched-table .add-sched-form .adder form{
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+.home .wrapper .main-content .content-card .daily-sched-table .add-sched-form .adder form input[type=time]{
+    background-color: #fff;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    height: 40px;
+    width: 100%;
+    font-size: 18px;
+    padding-left: 16px;
+    padding-right: 16px;
+}
+.home .wrapper .main-content .content-card .daily-sched-table .add-sched-form .adder form button{
+    background-color: #2e66ff;
+    border: none;
+    border-radius: 8px;
+    letter-spacing: 1px;
+    color: #fff;
+    padding: 8px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+.home .wrapper .main-content .content-card .daily-sched-table .add-sched-form .adder form button:hover{
+    background-color: #4f7eff;
+}
+.home .wrapper .main-content .content-card .daily-sched-table table tbody tr td a{
+    text-decoration: none;
+    color: #2e66ff;
+}
+.home .wrapper .main-content .content-card .weekly-sched-table{
+    width: 100%;
+
+}
+.home .wrapper .main-content .content-card .weekly-sched-table table{
+    width: 100%; 
+    border-collapse: collapse;
+    border-spacing: 0;
+    box-shadow: 0 5px 10px rgb(0 0 0 / 10%);
+    border-radius: 12px;
+    overflow: hidden;
+}
+.home .wrapper .main-content .content-card .weekly-sched-table table th{
+    background-color: #98DED9;
+    color: #010701;
+    font-weight: bold;
+}
+.home .wrapper .main-content .content-card .weekly-sched-table table th, .home .wrapper .main-content .content-card .weekly-sched-table table td{
+    text-align: left;
+    padding: 15px 20px;
+}
+
+.home .wrapper .main-content .content-card .select-date-sch{
+    width: 100%;
+    padding: 15px 20px;
+    border: 1px solid #cfcfcf;
+    border-radius: 12px;
+}
+.home .wrapper .main-content .content-card .select-date-sch .search-holder{
+    width: 80%;
+}
+.home .wrapper .main-content .content-card .select-date-sch .search-holder label{
+    font-size: 18px;
+}
+
+.home .wrapper .main-content .content-card .select-date-sch .search-holder form input[type=date]{
+    background-color: #fff;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    height: 35px;
+    width: 25%;
+    font-size: 18px;
+    padding-left: 16px;
+    padding-right: 16px;
+}
+.home .wrapper .main-content .content-card .select-date-sch .search-holder button{
+    margin-left: 50px;
+    border: none;
+    border-radius: 8px;
+    letter-spacing: 1px;
+    color: #fff;
+    padding: 6px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+.home .wrapper .main-content .content-card .weekly-sched-stats{
+    width: 100%;
+    padding: 15px 20px;
+    border: 1px solid #cfcfcf;
+    border-radius: 12px;
+}
+.home .wrapper .main-content .content-card .weekly-sched-stats .holder{
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    font-weight: 500;
+}
+.home .wrapper .main-content .content-card .report-form-conatiner .info{
+    background-color: #98DED9;
+    width: 100%;
+    padding: 15px 20px;
+    border: 1px solid #cfcfcf;
+    border-top-right-radius: 12px;
+    border-top-left-radius: 12px;
+    border-bottom: 2px solid #cfcfcf;
+}
+.home .wrapper .main-content .content-card .report-form-conatiner .info .brief{
+    display: flex;
+    justify-content: space-between;
+}
+.home .wrapper .main-content .content-card .report-form-conatiner .class-details{
+    width: 100%;
+    padding: 15px 20px;
+    border-left: 1px solid #cfcfcf;
+    border-bottom: 1px solid #cfcfcf;
+    border-right: 1px solid #cfcfcf;
+    background-color: #fff;
+
+    
+}
+.home .wrapper .main-content .content-card .report-form-conatiner .class-details .heading{
+    height: 20px;
+}
+.home .wrapper .main-content .content-card .report-form-conatiner table{
+    width: 100%;
+    padding: 15px 20px;
+    border-collapse: collapse;
+    background-color: #fff;
+}
+.home .wrapper .main-content .content-card .report-form-conatiner table tr{
+    border-bottom: 1px solid #cfcfcf;
+    border-right: 1px solid #cfcfcf;
+}
+.home .wrapper .main-content .content-card .report-form-conatiner table tr td{
+    border-left: 1px solid #cfcfcf;
+    padding: 15px 20px;
+}
+.home .wrapper .main-content .content-card .report-form-conatiner table tr .fbox{
+    display: flex;
+    justify-content: space-between;
+}
+.home .wrapper .main-content .content-card .report-form-conatiner table tr td .big{
+    width: 515px;
+    height: 180px;
+}
+.home .wrapper .main-content .content-card .report-form-conatiner .formsub{
+    text-align: center;
+    margin: 40px;
+}
+.home .wrapper .main-content .content-card .report-form-conatiner table input[type=text], .report-form-conatiner table textarea{
+    background-color: #fff;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    height: 40px;
+    width: 58%;
+    font-size: 18px;
+    padding-left: 16px;
+    padding-right: 16px;
+}
+.home .wrapper .main-content .content-card .report-form-conatiner table input[type=number], .report-form-conatiner table input[type=time]{
+    background-color: #fff;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    height: 40px;
+    width: 19%;
+    font-size: 18px;
+    padding-left: 16px;
+    padding-right: 16px;
+}
+.home .wrapper .main-content .content-card .select-date-rep{
+    width: 100%;
+    padding: 15px 20px;
+    border: 1px solid #cfcfcf;
+    border-radius: 12px;
+}
+.home .wrapper .main-content .content-card .select-date-rep .search-holder{
+    width: 100%;
+}
+.home .wrapper .main-content .content-card .select-date-rep .search-holder label{
+    font-size: 18px;
+}
+
+.home .wrapper .main-content .content-card .select-date-rep .search-holder form select{
+    background-color: #fff;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    height: 35px;
+    width: 25%;
+    font-size: 18px;
+    padding-left: 16px;
+    padding-right: 16px;
+}
+.home .wrapper .main-content .content-card .select-date-rep .search-holder form input[type=date]{
+    background-color: #fff;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    height: 35px;
+    width: 75%;
+    font-size: 18px;
+    padding-left: 16px;
+    padding-right: 16px;
+}
+.home .wrapper .main-content .content-card .select-date-rep .search-holder button{
+    margin-left: 50px;
+    border: none;
+    border-radius: 8px;
+    letter-spacing: 1px;
+    color: #fff;
+    padding: 6px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+.home .wrapper .main-content .content-card .unifbox{
+    display: flex;
+    justify-content: center;
+}
+.home .wrapper .main-content .content-card .report-details{
+    margin-top: 20px;
+    width: 100%;
+    padding-top: 15px;
+    /* border: 1px solid #cfcfcf; */
+    /* border-radius: 12px; */
+}
+.home .wrapper .main-content .content-card .report-details table{
+    width: 100%; 
+    border-collapse: collapse;
+    border-spacing: 0;
+    box-shadow: 0 5px 10px rgb(0 0 0 / 10%);
+    border-top-right-radius: 12px;
+    border-top-left-radius: 12px;
+    overflow: hidden;
+}
+.home .wrapper .main-content .content-card .report-details table th{
+    background-color: #98DED9;
+    color: #010701;
+    font-weight: bold;
+}
+.home .wrapper .main-content .content-card .report-details table th, .home .wrapper .main-content .content-card .report-details table td{
+    text-align: left;
+    padding: 15px 20px;
+}
+.home .wrapper .main-content .content-card .report-details table thead tr{
+    border: 1px solid #98DED9;
+}
+.home .wrapper .main-content .content-card .report-details table tbody tr{
+    border: 1px solid #cfcfcf;
+}
+
+.home .wrapper .main-content .content-card .report-details .stud-info{
+    width: 100%;
+    padding: 15px 20px;
+    border: 1px solid #cfcfcf;
+    border-radius: 12px;
+    margin-top: 10px;
+    font-size: 18px;
+    display: flex;
+    justify-content: space-between;
+}
+.home .wrapper .main-content .content-card .select-date-rep .payment{
+    font-size: 18px
+}
+.home .wrapper .main-content .content-card .payment-table {
+    margin-top: 40px;
+    width: 100%;
+    padding: 15px 20px;
+    font-size: 18px;
+    border-collapse: collapse;
+    background-color: #fff;
+    border-top: 1px solid #cfcfcf;
+}
+.home .wrapper .main-content .content-card  .payment-table  tr{
+    
+    border-bottom: 1px solid #cfcfcf;
+    border-right: 1px solid #cfcfcf;
+}
+.home .wrapper .main-content .content-card .payment-table  tr td{
+    border-left: 1px solid #cfcfcf;
+    padding: 15px 20px;
+}
+
+.home .wrapper .main-content .content-card .payment-table  tr .fbox{
+    display: flex;
+    justify-content: space-between;
+}
+.home .wrapper .main-content .content-card .payment-table  tr td .big{
+    width: 515px;
+    height: 180px;
+}
+.home .wrapper .main-content .content-card .formsub{
+    text-align: center;
+    margin: 40px;
+}
+.home .wrapper .main-content .content-card .payment-table  input[type=text], .content-card .payment-table  select{
+    background-color: #fff;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    height: 40px;
+    width: 58%;
+    font-size: 18px;
+    padding-left: 16px;
+    padding-right: 16px;
+}
+.home .wrapper .main-content .content-card .payment-table  input[type=date]{
+    background-color: #fff;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    height: 40px;
+    width: 30%;
+    font-size: 18px;
+    padding-left: 16px;
+    padding-right: 16px;
+}
+.home .wrapper .main-content .content-card .payment-table  input[type=checkbox]{
+    width: 18px;
+    height: 18px;
+}
+.home .wrapper .main-content .content-card .payment-table tbody .inner{
+    width: 50%;
+}
+.home .wrapper .main-content .content-card .payment-table tbody .inner td{
+    border-left: none;
+    padding: 0;
+}
+.home .wrapper .main-content .content-card .payment-table textarea{
+    background-color: #fff;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    height: 140px;
+    width: 70%;
+    font-size: 18px;
+    padding-left: 16px;
+    padding-right: 16px;
+}
+.home .wrapper .main-content .content-card .unifbox input[type=month]{
+    background-color: #fff;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    height: 40px;
+    width: 75%;
+    font-size: 18px;
+    padding-left: 16px;
+    padding-right: 16px;
+}
+
+.home .wrapper .main-content .content-card .progress-details{
+    margin-top: 20px;
+    width: 100%;
+    padding-top: 15px;
+    /* border: 1px solid #cfcfcf; */
+    /* border-radius: 12px; */
+}
+.home .wrapper .main-content .content-card .progress-details .stud-info{
+    width: 100%;
+    padding: 15px 20px;
+    border: 1px solid #cfcfcf;
+    border-radius: 12px;
+    margin-top: 10px;
+    font-size: 18px;
+    display: flex;
+    justify-content: space-between;
+}
+.home .wrapper .main-content .content-card .progress-table {
+    margin-top: 40px;
+    width: 100%;
+    padding: 15px 20px;
+    font-size: 18px;
+    border-collapse: collapse;
+    background-color: #fff;
+    border-top: 1px solid #cfcfcf;
+}
+.home .wrapper .main-content .content-card  .progress-table  tr{
+    
+    border-bottom: 1px solid #cfcfcf;
+    border-right: 1px solid #cfcfcf;
+}
+.home .wrapper .main-content .content-card .progress-table  tr td{
+    border-left: 1px solid #cfcfcf;
+    padding: 15px 20px;
+}
+
+.home .wrapper .main-content .content-card .progress-table  tr .fbox{
+    display: flex;
+    justify-content: space-between;
+}
+.home .wrapper .main-content .content-card .progress-table  tr td .big{
+    width: 515px;
+    height: 180px;
+}
+.home .wrapper .main-content .content-card .formsub{
+    text-align: center;
+    margin: 40px;
+}
+.home .wrapper .main-content .content-card .progress-table  input[type=text], .content-card .progress-table  select{
+    background-color: #fff;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    height: 40px;
+    width: 90%;
+    font-size: 18px;
+    padding-left: 16px;
+    padding-right: 16px;
+}
+.home .wrapper .main-content .content-card .progress-table  input[type=date]{
+    background-color: #fff;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    height: 40px;
+    width: 90%;
+    font-size: 18px;
+    padding-left: 16px;
+    padding-right: 16px;
+}
+
+.home .wrapper .main-content .content-card .progress-table textarea{
+    background-color: #fff;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    height: 200px;
+    width: 70%;
+    font-size: 18px;
+    padding: 5px 16px 5px 16px;
+}
+.home .wrapper .main-content .content-card .progress-table tbody table{
+    width: 100%;
+}
+.home .wrapper .main-content .content-card .progress-table tbody table tr{
+    border-bottom: none;
+    border-right: none;
+}
+.home .wrapper .main-content .content-card .progress-table tbody table tr td{
+    border-left: none;
+    padding: 5px 0 5px 0;
+    margin-right: 5px;
+}
+
+
+.overview-boxes{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 0 20px;
+  margin-bottom: 26px;
+}
+.overview-boxes .box{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: calc(100% / 4 - 15px);
+  background: #fff;
+  padding: 15px 14px;
+  border-radius: 12px;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+}
+.overview-boxes .box-topic{
+  font-size: 20px;
+  font-weight: 500;
+}
+.box .number{
+  display: inline-block;
+  font-size: 35px;
+  margin-top: -6px;
+  font-weight: 500;
+}
+.box .brief .text{
+  font-size: 12px;
+}
+.box .ico{
+  display: inline-block;
+  font-size: 32px;
+  height: 50px;
+  width: 50px;
+  background: #cce5ff;
+  line-height: 50px;
+  text-align: center;
+  color: #66b0ff;
+  border-radius: 12px;
+  margin: -15px 0 0 6px;
+}
+.box .ico.two{
+    color: #e733ff;
+    background: #fad2ff;
+ }
+.box .ico.three{
+   color: #ffc233;
+   background: #ffe8b3;
+ }
+.box .ico.four{
+
+   color: #2BD47D;
+   background: #C0F2D8;
+ }
+.box .ico.five{
+    color: #e05260;
+    background: #f7d4d7;
+}
+#chartContainer{
+    border-radius: 12px;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+}
