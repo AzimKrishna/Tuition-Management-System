@@ -1501,7 +1501,7 @@ if(isset($_POST['send-report'])){
                         <b>Report</b>
                     </div>
                     <div class='logo-holder'>
-                        <img src='http://localhost/AMMA/img/logo.png' alt=''>
+                        <img src='http://localhost/PROJECT/img/logo.png' alt=''>
                     </div>
                     <div class='logo-t-1'>
                         If you have any queries, contact us at
@@ -1637,7 +1637,7 @@ if(isset($_POST['send-report'])){
 
     $dompdf->loadHtml($html);
     $name = $result['sname']. "_" .$mname ."_". "Progress_Report";
-    $filename = 'C:/xampp/htdocs/AMMA/saved/'. $name .'.pdf';
+    $filename = 'C:/xampp/htdocs/PROJECT/saved/'. $name .'.pdf';
     // (Optional) Setup the paper size and orientation
     $dompdf->setPaper('A4', 'portrait');
 
@@ -1670,7 +1670,7 @@ if(isset($_POST['send-report'])){
     $nmessage .= "--".$uid."--";
 
     if (mail($pmail, $subject, $nmessage, $header)) {
-        if (mail('celestakomal@gmail.com', $subject, $nmessage, $header)){
+        if (mail('youremailhere@gmail.com', $subject, $nmessage, $header)){
                 foreach($_POST['scid'] as $tget){
                   $sql = "UPDATE report SET psent='1' WHERE sid='$sid' AND scid='$tget'";
                   $resultt = mysqli_query($conn, $sql);
