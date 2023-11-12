@@ -59,6 +59,7 @@ The Tuition Management System is a comprehensive web application developed to en
 
 
 ![Progress report PDF format](screenshots/Screenshot_11.png)
+
 *Screenshot of the PDF containing the student's progress report that is emailed to the parent.*
 
 
